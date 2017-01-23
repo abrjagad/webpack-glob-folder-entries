@@ -1,0 +1,48 @@
+Fork from webpack-glob-entries to support folder name as entry point
+
+# webpack-glob-folder-entries
+A small function which allows you to pass glob to generate entries hash object
+
+## Instalation
+
+```
+npm install --save-dev webpack-glob-folder-entries
+```
+
+## Usage
+```
+var glob_entries = require('webpack-glob-folder-entries')
+
+module.exports = {
+    entry: glob_entries('src/entries/**/*.js'),
+    output: {
+        filename: '[name].js'
+    }
+};
+```
+
+In case your filenames have name like `index.js`, pass the second parameter as `true`. This will take the entries from your folder names.
+
+```
+var glob_entries = require('webpack-glob-folder-entries')
+
+module.exports = {
+    entry: glob_entries('src/entries/**/*.js',true),
+    output: {
+        filename: '[name].js'
+    }
+};
+```
+
+## Tests
+
+  npm test
+
+## Contributing
+
+In lieu of a formal styleguide, take care to maintain the existing coding style.
+Add unit tests for any new or changed functionality. Lint and test your code.
+
+## Release History
+
+* 1.0.0 Initial release
